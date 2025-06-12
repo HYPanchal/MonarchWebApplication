@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide-out-right {
+      transform: translateX(100%);
+    }
+    .slide-in-left {
+      transform: translateX(0%);
+    }
+    .transition-slide {
+      transition: transform 0.5s ease-in-out;
+    }
+    input::selection {
+        background-color: orange;
+        color: black;
+    }
+
+    input:focus::selection {
+        background-color: orange;
+        color: black;
+    }
+  </style>
+</head>
+<body class="bg-gray-800 min-h-screen flex items-center justify-center px-2 py-4">
+
+    <div class="w-full max-w-5xl bg-gray-900 text-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+  
+      <!-- Image Section (Top on mobile, left on desktop) -->
+      <div class="w-full md:w-1/2 h-64 md:h-auto">
+        <img src="../images/road.png" alt="Image" class="w-full h-full object-cover opacity-80 rounded-3xl px-4 py-4" />
+      </div>
+  
+      <!-- Form Section (Bottom on mobile, right on desktop) -->
+      <div id="formWrapper" class="w-full md:w-1/2 p-8 md:p-10 transition-slide slide-in-left flex flex-col justify-center">
+  
+        <!-- Signup Form -->
+        <div id="signupForm">
+          <h2 class="text-sm text-gray-400 uppercase">Start for Free</h2>
+          <h1 class="text-3xl font-bold mb-2">Create new account<span class="text-blue-500">.</span></h1>
+          <p class="text-sm mb-6">
+            Already a Member?
+            <a href="#" id="showLogin" class="text-blue-400 hover:underline">Log in</a>
+          </p>
+  
+          <div class="space-y-4">
+            <div class="flex flex-col md:flex-row gap-4">
+              <input type="text" placeholder="First name" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+              <input type="text" placeholder="Last name" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            </div>
+            <input type="email" placeholder="Email" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <input type="password" placeholder="Password" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+  
+            <label class="block w-full cursor-pointer">
+              <span class="text-sm text-white">Upload PDF</span>
+              <input type="file" accept="application/pdf"
+                class="mt-2 block w-full text-sm text-white file:mr-4 file:py-2 file:px-4
+                       file:rounded-xl file:border-2 file:border-orange-500
+                       file:text-sm file:font-semibold
+                       file:bg-transparent file:text-orange-500
+                       hover:file:bg-orange-500 hover:file:text-white
+                       focus:outline-none focus:ring-2 focus:ring-orange-500" />
+            </label>
+  
+            <div class="flex gap-4 mt-4">
+              <button class="px-6 py-2 rounded-xl border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out">Create account</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Login Form -->
+        <div id="loginForm" class="hidden">
+          <h1 class="text-3xl font-bold mb-2">Login<span class="text-blue-500">.</span></h1>
+          <p class="text-sm mb-6">
+            New user?
+            <a href="#" id="showSignup" class="text-blue-400 hover:underline">Create an account</a>
+          </p>
+  
+          <div class="space-y-4">
+            <input type="email" placeholder="Email" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <input type="password" placeholder="Password" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <label class="flex items-center text-sm">
+              <input type="checkbox" class="mr-2 accent-blue-600" />
+              Login as Admin
+            </label>
+            <div class="flex gap-4 mt-4">
+              <button class="px-6 py-2 rounded-xl border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Script remains the same -->
+    <script>
+      const formWrapper = document.getElementById('formWrapper');
+      const signupForm = document.getElementById('signupForm');
+      const loginForm = document.getElementById('loginForm');
+      const showLogin = document.getElementById('showLogin');
+      const showSignup = document.getElementById('showSignup');
+  
+      showLogin.addEventListener('click', () => {
+        formWrapper.classList.remove('slide-in-left');
+        formWrapper.classList.add('slide-out-right');
+        setTimeout(() => {
+          signupForm.classList.add('hidden');
+          loginForm.classList.remove('hidden');
+          formWrapper.classList.remove('slide-out-right');
+          formWrapper.classList.add('slide-in-left');
+        }, 500);
+      });
+  
+      showSignup.addEventListener('click', () => {
+        formWrapper.classList.remove('slide-in-left');
+        formWrapper.classList.add('slide-out-right');
+        setTimeout(() => {
+          loginForm.classList.add('hidden');
+          signupForm.classList.remove('hidden');
+          formWrapper.classList.remove('slide-out-right');
+          formWrapper.classList.add('slide-in-left');
+        }, 500);
+      });
+    </script>
+  
+  </body>
+  
