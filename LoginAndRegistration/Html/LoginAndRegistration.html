@@ -26,13 +26,15 @@
     }
   </style>
 </head>
-<body class="bg-gray-800 min-h-screen flex items-center justify-center px-2 py-4">
+<body class=" min-h-screen flex items-center justify-center px-2 py-4">
 
-    <div class="w-full max-w-5xl bg-gray-900 text-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+    <div class="shadow-[0_10px_25px_rgba(0,0,0,0.9)] w-full max-w-5xl text-white rounded-3xl overflow-hidden flex flex-col md:flex-row">
   
       <!-- Image Section (Top on mobile, left on desktop) -->
-      <div class="w-full md:w-1/2 h-64 md:h-auto">
-        <img src="../images/road.png" alt="Image" class="w-full h-full object-cover opacity-80 rounded-3xl px-4 py-4" />
+      <div class="w-full md:w-1/2 h-64 md:h-auto overflow-hidden rounded-3xl px-4 py-4">
+        <div class="w-full h-full overflow-hidden rounded-3xl">
+          <img src="../images/road.png" alt="Image" class="w-full h-full object-cover opacity-80 transform transition duration-500 ease-in-out hover:scale-[1.2]" />
+        </div>
       </div>
   
       <!-- Form Section (Bottom on mobile, right on desktop) -->
@@ -41,24 +43,24 @@
         <!-- Signup Form -->
         <div id="signupForm">
           <h2 class="text-sm text-gray-400 uppercase">Start for Free</h2>
-          <h1 class="text-3xl font-bold mb-2">Create new account<span class="text-blue-500">.</span></h1>
-          <p class="text-sm mb-6">
+          <h1 class="text-gray-700 text-3xl font-bold mb-2">Create new account<span class="text-orange-500">.</span></h1>
+          <p class="text-gray-700 text-sm mb-6">
             Already a Member?
             <a href="#" id="showLogin" class="text-blue-400 hover:underline">Log in</a>
           </p>
   
           <div class="space-y-4">
             <div class="flex flex-col md:flex-row gap-4">
-              <input type="text" placeholder="First name" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
-              <input type="text" placeholder="Last name" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+              <input type="text" placeholder="First name" class="text-gray-400 px-4 py-2 rounded-xl w-full border-2 border-gray-200 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+              <input type="text" placeholder="Last name" class="text-gray-400 px-4 py-2 rounded-xl w-full border-2 border-gray-200 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
             </div>
-            <input type="email" placeholder="Email" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
-            <input type="password" placeholder="Password" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <input type="email" placeholder="Email" class="text-gray-400 px-4 py-2 rounded-xl w-full border-2 border-gray-200 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <input type="password" placeholder="Password" class="text-gray-400 px-4 py-2 rounded-xl w-full border-2 border-gray-200 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
   
             <label class="block w-full cursor-pointer">
-              <span class="text-sm text-white">Upload PDF</span>
+              <span class="text-sm text-gray-700">Upload PDF</span>
               <input type="file" accept="application/pdf"
-                class="mt-2 block w-full text-sm text-white file:mr-4 file:py-2 file:px-4
+                class="mt-2 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4
                        file:rounded-xl file:border-2 file:border-orange-500
                        file:text-sm file:font-semibold
                        file:bg-transparent file:text-orange-500
@@ -67,28 +69,28 @@
             </label>
   
             <div class="flex gap-4 mt-4">
-              <button class="px-6 py-2 rounded-xl border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out">Create account</button>
+              <button class="px-6 py-2 text-orange-500 rounded-xl border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out">Create account</button>
             </div>
           </div>
         </div>
   
         <!-- Login Form -->
         <div id="loginForm" class="hidden">
-          <h1 class="text-3xl font-bold mb-2">Login<span class="text-blue-500">.</span></h1>
-          <p class="text-sm mb-6">
+          <h1 class="text-gray-700 text-3xl font-bold mb-2">Login<span class="text-orange-500">.</span></h1>
+          <p class="text-gray-700 text-sm mb-6">
             New user?
             <a href="#" id="showSignup" class="text-blue-400 hover:underline">Create an account</a>
           </p>
   
           <div class="space-y-4">
-            <input type="email" placeholder="Email" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
-            <input type="password" placeholder="Password" class="bg-gray-800 text-white px-4 py-2 rounded-xl w-full border border-gray-600 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
-            <label class="flex items-center text-sm">
-              <input type="checkbox" class="mr-2 accent-blue-600" />
+            <input type="email" placeholder="Email" class="text-white px-4 py-2 rounded-xl w-full border-2 border-gray-200 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <input type="password" placeholder="Password" class="text-white px-4 py-2 rounded-xl w-full border-2 border-gray-200 hover:border-orange-500 focus:border-orange-700 transition duration-500 ease-in-out" />
+            <label class="flex items-center text-gray-700">
+              <input type="checkbox" class="mr-2 accent-orange-500" />
               Login as Admin
             </label>
             <div class="flex gap-4 mt-4">
-              <button class="px-6 py-2 rounded-xl border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out">Login</button>
+              <button class="px-6 py-2 rounded-xl text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out">Login</button>
             </div>
           </div>
         </div>
