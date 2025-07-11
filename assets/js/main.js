@@ -207,3 +207,28 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+/**
+   * Capability card toggle
+   */
+
+function toggleCard(card) {
+  // Collapse any expanded cards except the clicked one
+  document.querySelectorAll('.card').forEach(c => {
+      if (c !== card) c.classList.remove('expanded');
+  });
+
+  // Toggle clicked card
+  card.classList.toggle('expanded');
+}
+
+//Capabilites Section
+function toggleCard(card) {
+  // Collapse any expanded cards except the clicked one
+  document.querySelectorAll('.card').forEach(c => {
+      if (c !== card) c.classList.remove('expanded');
+  });
+
+  // Toggle clicked card
+  card.classList.toggle('expanded');
+}
