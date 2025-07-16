@@ -902,16 +902,16 @@ section,
 .hero .container {
   position: absolute;
   text-align: left;
-  bottom: 70px;
+  bottom: 55px;
   left: 110px;
   z-index: 3;
   text-align: left;
 }
 
-.hero h2 {
+.hero p {
   color: white;
   margin: 0;
-  font-size: 55px;
+  font-size: 70px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -923,6 +923,20 @@ section,
   border: none;
   margin-bottom: 2rem;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .hero .container {
+    left: 50% !important;               
+    transform: translateX(-50%);        
+    text-align: center;                 
+    width: 100%; 
+  }
+
+  .hero p {
+    font-size: 50px;
+    line-height: 1.4;
+  }
 }
 
 
