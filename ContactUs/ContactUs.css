@@ -282,6 +282,11 @@ h6 {
 }
 
 @media (max-width: 1200px) {
+
+  .header {
+    backdrop-filter: var(--nav-color);
+  }
+
   .header .logo {
     order: 1;
   }

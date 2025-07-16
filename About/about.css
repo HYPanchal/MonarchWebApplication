@@ -182,19 +182,16 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  /* --background-color: rgba(21, 34, 43, 0.85); */
+  --background-color: rgba(0, 0, 0, 0);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
-  --background-color: rgba(21, 34, 43, 0.5);
-  /* Reduce opacity for better blur */
-  backdrop-filter: blur(10px);
-  /* Blurs background behind header */
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .header .logo {
@@ -251,16 +248,6 @@ h6 {
   .header .navmenu {
     order: 3;
   }
-}
-
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
-
-/* Global Header on Scroll
-------------------------------*/
-.scrolled .header {
-  /* --background-color: rgba(21, 34, 43, 0.85); */
 }
 
 /*--------------------------------------------------------------

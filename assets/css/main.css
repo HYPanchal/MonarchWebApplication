@@ -227,6 +227,8 @@ h6 {
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -281,16 +283,6 @@ h6 {
   .header .navmenu {
     order: 3;
   }
-}
-
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
-
-/* Global Header on Scroll
-------------------------------*/
-.scrolled .header {
-  --background-color: rgba(21, 34, 43, 0.85);
 }
 
 /*--------------------------------------------------------------
@@ -1311,6 +1303,48 @@ section,
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
+.petronas-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: black; 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.lyondellBasell-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  font-weight: 400;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.reliance-logo {
+  font-family: 'Serif';
+  font-size: 70px;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.avanir-logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.suncor-logo {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  color: black;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
 .clients {
   padding: 20px 0;
 }
