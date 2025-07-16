@@ -140,16 +140,28 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 20px 0;
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 20px 0;
   transition: all 0.5s;
-  z-index: 997;
+  pointer-events: auto; 
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .header .logo {
@@ -165,10 +177,11 @@ h6 {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--background-color);
 }
 
 .header .cta-btn,
+
 .header .cta-btn:focus {
   color: var(--contrast-color);
   font-size: 13px;
@@ -181,6 +194,7 @@ h6 {
 }
 
 .header .cta-btn:hover,
+
 .header .cta-btn:focus:hover {
   color: var(--contrast-color);
   background: var(--accent-color);
@@ -188,7 +202,6 @@ h6 {
 }
 
 @media (max-width: 1200px) {
-
   .header {
     backdrop-filter: var(--nav-color);
   }
@@ -208,18 +221,17 @@ h6 {
   }
 }
 
-/* Global Header on Scroll
-------------------------------*/
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* ===== DESKTOP NAV (min-width: 1200px) ===== */
+
 @media (min-width: 1200px) {
+
   .navmenu {
     padding: 0;
   }
@@ -251,7 +263,6 @@ h6 {
     border-radius: 6px;
     transition: background 0.3s, color 0.3s;
   }
-
   .navmenu>ul>li>a:hover,
   .navmenu>ul>li>a:focus,
   .navmenu>ul>li>.active,
@@ -278,7 +289,7 @@ h6 {
 
   .navmenu {
     padding: 0;
-    z-index: 9997;
+    z-index: 10000;
   }
 
   .navmenu ul {
