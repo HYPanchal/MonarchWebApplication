@@ -837,11 +837,23 @@ section,
 
 
 
-.heading {
+h2.heading{
 
   font-size: 2rem;
 
-  color: #0b0b2c;
+  color: #040410;
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+
+}
+
+h4.heading{
+
+  font-size: 1.5rem;
+
+  color: #040410;
 
   font-weight: 700;
 
