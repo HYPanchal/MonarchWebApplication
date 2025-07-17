@@ -1404,11 +1404,24 @@ section,
   opacity: 1;
 }
 
-@media (max-width: 640px) {
-  .clients .client-logo img {
-    padding: 20px;
+@media (max-width: 768px) {
+  .clients .client-logo {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .clients .client-logo div {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .clients .row {
+    flex-direction: column;
+    align-items: center;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Features Section
