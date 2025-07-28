@@ -232,3 +232,107 @@ function toggleCard(card) {
   // Toggle clicked card
   card.classList.toggle('expanded');
 }
+
+//client js
+const logos = [
+  "assets/img/clients/MM-Logo-Black-1.png",
+  "assets/img/clients/Jacobs_Engineering_logo.png",
+  "assets/img/clients/Petrofac-Logo-7.png",
+  "assets/img/clients/TECHNIP_ENERGIES_LOGO-3.png",
+  "assets/img/clients/yokogawa-logo.svg",
+  "assets/img/clients/Emerson-Electric-Logo.png",
+  "assets/img/clients/Reliance-logo.png",
+  "assets/img/clients/tata-consultancy-services-logo.png",
+  "assets/img/clients/LYB_BIG.png",
+  "assets/img/clients/Fosterlogofw-logo.jpg",
+  "assets/img/clients/worleyparsons-limited-logo.png",
+  "assets/img/clients/kesar_petroproducts_limited_logo.jpg",
+  "assets/img/clients/Bayer-logo.png",
+  "assets/img/clients/SNC-Lavalin-logo-2.png",
+  "assets/img/clients/BP-Emblem.png",
+  "assets/img/clients/IndianOil_Logo_.jpg",
+  "assets/img/clients/Hindustan_Petroleum-Logo.png",
+  "assets/img/clients/Bharat-Petroleum-Logo.jpg",
+  "assets/img/clients/Dangote_Group_Logo.png",
+  "assets/img/clients/Saudi-Aramco-Logo.jpg",
+  "assets/img/clients/Adnoc-logo.png",
+  "assets/img/clients/SABIC_Logo.png"
+];
+
+let currentIndex = 0;
+const grid = document.getElementById('logoGrid');
+
+// Initial fill
+function fillGrid() {
+  grid.innerHTML = '';
+  const isMobile = window.innerWidth < 768;
+  totalBlocks = isMobile ? 10 : 12;
+
+  const shuffledLogos = [...logos].sort(() => Math.random() - 0.5);
+
+  for (let i = 0; i < totalBlocks; i++) {
+    const div = document.createElement('div');
+    div.classList.add('grid-item');
+
+
+    const img = document.createElement('img');
+    
+    if (i >= shuffledLogos.length) {
+      img.src = shuffledLogos[i % shuffledLogos.length];
+    } else {
+      img.src = shuffledLogos[i];
+    }
+
+    div.appendChild(img);
+    grid.appendChild(div);
+  }
+}
+
+function getRandomLogo() {
+  return logos[Math.floor(Math.random() * logos.length)];
+}
+
+// Change random block logo with fade animation
+function changeRandomLogo() {
+  const blocks = document.querySelectorAll('.grid-item');
+  if (blocks.length === 0) return;
+
+  const usedLogos = new Set();
+  blocks.forEach(block => {
+    const img = block.querySelector('img');
+    if (img) usedLogos.add(img.src);
+  });
+
+  const availableLogos = logos.filter(
+    logo => ![...usedLogos].some(used => used.includes(logo))
+  );
+
+  if (availableLogos.length === 0) return;
+
+  const randomIndex = Math.floor(Math.random() * blocks.length);
+  const randomBlock = blocks[randomIndex];
+  const img = randomBlock.querySelector('img');
+
+  const newLogo = availableLogos[Math.floor(Math.random() * availableLogos.length)];
+
+  img.classList.add('fade-out');
+
+  setTimeout(() => {
+    img.src = newLogo;
+    img.classList.remove('fade-out');
+    img.classList.add('fade-in');
+
+    setTimeout(() => {
+      img.classList.remove('fade-in');
+    }, 500);
+  }, 500);
+}
+
+// Initial display
+fillGrid();
+
+// Update on screen resize
+window.addEventListener('resize', fillGrid);
+
+// Run change every 2 seconds
+setInterval(changeRandomLogo, 5000);
