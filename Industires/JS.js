@@ -1,9 +1,9 @@
 const cardData = {
   1: {
-    img: "Images/118212562.cms",
+    img: "Images/oil_and_gas.jpg",
     title: `<h3 class="text-2xl font-bold">Empowering the Oil & Gas Industry with Tailored Solutions</h3>`,
     text: `<p class="text-gray-700">
-          At Monarch, we understand the complexities and critical demands of the oil and gas sector. Our comprehensive services are designed to support upstream, midstream, and downstream operations with the latest technology, engineering excellence, and domain-specific expertise.
+            We deliver end-to-end engineering solutions across upstream, midstream, and downstream operations. Our expertise covers instrumentation, automation, and process design tailored to the energy sector. With a strong focus on safety, reliability, and efficiency, we support clients through advanced project management and technical excellence. Our solutions are sustainable, innovative, and cost-effective, meeting global industry standards.
       </p>
       <h3 class="text-2xl font-bold">Our Services Include:</h3>
       <ul class="list-disc pl-5 text-gray-600">
@@ -18,9 +18,11 @@ const cardData = {
       </ul>`
   },
   2: {
-    img: "Images/download (1).jfif",
-    title: "High Tech",
-    text: `Delivering cutting-edge solutions for AI, machine learning, and cloud infrastructure to revolutionize how technology empowers industries.`
+    img: "Images/IT_E_Images.jpg",
+    title: `<h3 class="text-2xl font-bold">Information Technology (IT)</h3>`,
+    text: `<p class="text-gray-700">
+            We provide digital transformation services that empower businesses to scale and innovate. Our expertise includes ERP, SAP, and Salesforce implementation, along with advanced solutions in Cloud Computing, Artificial Intelligence, and Machine Learning. We design customized enterprise software to drive innovation and scalability, enhance operational efficiency with automation, and build future-ready digital ecosystems for global clients.
+      </p>`
   }
 };
 
