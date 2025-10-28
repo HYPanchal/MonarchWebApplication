@@ -242,7 +242,7 @@ const logos = [
   "assets/img/clients/yokogawa-logo.svg",
   "assets/img/clients/Emerson-Electric-Logo.png",
   "assets/img/clients/Reliance-logo.png",
-  "assets/img/clients/tata-consultancy-services-logo.png",
+  "assets/img/clients/TCES.png",
   "assets/img/clients/LYB_BIG.png",
   "assets/img/clients/Fosterlogofw-logo.jpg",
   "assets/img/clients/worleyparsons-limited-logo.png",
